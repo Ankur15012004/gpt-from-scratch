@@ -45,24 +45,18 @@ This project implements a complete GPT-style language model from scratch, includ
 
 ## 🔬 Mathematical Foundations
 
-The model implements key transformer equations from first principles:
+The model implements key Transformer equations from first principles:
 
-**Scaled Dot-Product Attention:**
-\operatorname{Attention}(Q,K,V)=
-\operatorname{softmax}!\left(\frac{QK^{\mathsf T}}{\sqrt{d_k}}\right)V
+- **Scaled Dot-Product Attention**:  
+  Attention(Q, K, V) = softmax((QKᵀ) / √dₖ) V
 
+- **Multi-Head Attention**:  
+  MultiHead(Q, K, V) = Concat(head₁, ..., headₕ) W₀  
+  where headᵢ = Attention(QWᵢ^Q, KWᵢ^K, VWᵢ^V)
 
-**Multi-Head Attention:**
-\operatorname{MultiHead}(Q,K,V)=
-\operatorname{Concat}\bigl(\text{head}_1,\dots,\text{head}_h\bigr)W_O
-\qquad
-\text{where }
-\text{head}_i=\operatorname{Attention}!\bigl(QW_i^{Q},,KW_i^{K},,VW_i^{V}\bigr)
+- **Layer Normalization**:  
+  LayerNorm(x) = γ · (x − μ) / σ + β
 
-
-**Layer Normalization:**
-\operatorname{LayerNorm}(x)=
-\gamma\cdot\frac{x-\mu}{\sigma}+\beta
 
 
 ## 🚀 Quick Start
@@ -135,26 +129,28 @@ python generate.py --prompt "HAMLET:" --length 100 --temperature 0.8
 
 ## 🔧 Technical Implementation
 
-### Project Structure
-📁 gpt-from-scratch/
-├── 📂 src/
-│ ├── 📂 model/
-│ │ ├── 🧠 transformer.py # Complete GPT model
-│ │ ├── 👁️ attention.py # Multi-head attention
-│ │ ├── 📍 embeddings.py # Token + positional embeddings
-│ │ └── 🔧 layers.py # Layer norm, feed-forward
-│ ├── 📂 data/
-│ │ ├── 🔤 tokenizer.py # GPT-2 tokenizer wrapper
-│ │ └── 📊 dataset.py # Text dataset processing
-│ └── 📂 utils/
-│ └── 🚀 training.py # Training utilities
-├── 📂 data/
-│ └── 📄 sample.txt # Training data
-├── 📂 checkpoints/ # Model checkpoints
-├── ⚙️ config.py # Model/training configuration
-├── 🚀 train.py # Main training script
-├── 🎭 generate.py # Text generation script
-└── 📚 README.md
+### 📁 Project Structure
+
+gpt-from-scratch/
+├── src/
+│   ├── model/
+│   │   ├── transformer.py       # Complete GPT model
+│   │   ├── attention.py         # Multi-head attention
+│   │   ├── embeddings.py        # Token + positional embeddings
+│   │   └── layers.py            # Layer norm, feed-forward
+│   ├── data/
+│   │   ├── tokenizer.py         # GPT-2 tokenizer wrapper
+│   │   └── dataset.py           # Text dataset processing
+│   └── utils/
+│       └── training.py          # Training utilities
+├── data/
+│   └── sample.txt               # Training data
+├── checkpoints/                # Model checkpoints
+├── config.py                   # Model/training configuration
+├── train.py                    # Main training script
+├── generate.py                 # Text generation script
+└── README.md
+
 
 
 ### 🌟 Key Features
