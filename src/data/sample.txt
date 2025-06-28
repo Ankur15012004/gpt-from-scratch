@@ -1,0 +1,13 @@
+@"
+Once upon a time, in a land far, far away, there lived a young programmer who dreamed of building artificial intelligence from scratch. Every day, they would study the mysteries of neural networks, attention mechanisms, and transformer architectures.
+
+The journey was not easy. There were bugs to fix, gradients to compute, and dimensions to align. But with each line of code, the dream grew closer to reality.
+
+Machine learning is the art of teaching computers to learn without being explicitly programmed. Through data, algorithms discover patterns and make predictions about the future.
+
+Transformers revolutionized natural language processing with their attention mechanism. Unlike recurrent networks, transformers can process sequences in parallel, making them much faster to train.
+
+The key insight of attention is that not all words in a sentence are equally important for understanding. By learning to focus on relevant parts of the input, transformers can capture long-range dependencies effectively.
+
+This is our training data. The model will learn to predict the next word given the previous words. Through this simple task, it will develop an understanding of language, grammar, and even some reasoning abilities.
+"@ | Out-File -FilePath "data/sample.txt" -Encoding UTF8

@@ -1,0 +1,21 @@
+
+3. **Add .gitignore content:**
+```powershell
+@"
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.venv/
+venv/
+checkpoints/*.pt
+checkpoints/*.pth
+logs/
+data/*.txt
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+"@ | Out-File -FilePath ".gitignore" -Encoding UTF8
