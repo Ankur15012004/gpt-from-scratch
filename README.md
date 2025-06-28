@@ -131,25 +131,28 @@ python generate.py --prompt "HAMLET:" --length 100 --temperature 0.8
 
 ### 📁 Project Structure
 
+```
 gpt-from-scratch/
 ├── src/
 │   ├── model/
-│   │   ├── transformer.py       # Complete GPT model
-│   │   ├── attention.py         # Multi-head attention
-│   │   ├── embeddings.py        # Token + positional embeddings
-│   │   └── layers.py            # Layer norm, feed-forward
+│   │   ├── transformer.py       # 🧠 Complete GPT model
+│   │   ├── attention.py         # 👁️ Multi-head attention
+│   │   ├── embeddings.py        # 📍 Token + positional embeddings
+│   │   └── layers.py            # 🔧 Layer norm, feed-forward
 │   ├── data/
-│   │   ├── tokenizer.py         # GPT-2 tokenizer wrapper
-│   │   └── dataset.py           # Text dataset processing
+│   │   ├── tokenizer.py         # 🔤 GPT-2 tokenizer wrapper
+│   │   └── dataset.py           # 📊 Text dataset processing
 │   └── utils/
-│       └── training.py          # Training utilities
+│       └── training.py          # 🚀 Training utilities
 ├── data/
-│   └── sample.txt               # Training data
-├── checkpoints/                # Model checkpoints
-├── config.py                   # Model/training configuration
-├── train.py                    # Main training script
-├── generate.py                 # Text generation script
-└── README.md
+│   └── sample.txt               # 📝 Training data
+├── checkpoints/                 # 💾 Model checkpoints
+├── config.py                    # ⚙️ Model/training configuration
+├── train.py                     # 🚀 Main training script
+├── generate.py                  # 🎭 Text generation script
+└── README.md                    # 📚 Project documentation
+```
+
 
 
 
