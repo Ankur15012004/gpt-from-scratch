@@ -48,16 +48,21 @@ This project implements a complete GPT-style language model from scratch, includ
 The model implements key transformer equations from first principles:
 
 **Scaled Dot-Product Attention:**
-Attention(Q,K,V) = softmax(QK^T / √d_k)V
+\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}!\left(\frac{QK^{\mathsf T}}{\sqrt{d_k}}\right)V
 
 
 **Multi-Head Attention:**
-MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W_O
-where head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
+\operatorname{MultiHead}(Q,K,V)=
+\operatorname{Concat}\bigl(\text{head}_1,\dots,\text{head}_h\bigr)W_O
+\qquad
+\text{where }
+\text{head}_i=\operatorname{Attention}!\bigl(QW_i^{Q},,KW_i^{K},,VW_i^{V}\bigr)
 
 
 **Layer Normalization:**
-LayerNorm(x) = γ * (x - μ) / σ + β
+\operatorname{LayerNorm}(x)=
+\gamma\cdot\frac{x-\mu}{\sigma}+\beta
 
 
 ## 🚀 Quick Start
